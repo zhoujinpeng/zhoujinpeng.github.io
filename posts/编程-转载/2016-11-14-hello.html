@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="周金鹏的博客">
 <meta property="og:description" content="今天在github上浏览hexo的主题时，被大神Litten的Yilia主题吸引了，毫不犹豫的换上了这套主题，吸取其他主题的优点，对它进行一些更好的小改造，今天就从添加返回顶部按钮开始吧。  其实，在hexo中实现这个功能不复杂，结合网上的教程，对相应的模块进行修改就可以了。现给出自己修改的过程。">
 <meta property="og:image" content="https://zhoujinpeng.github.io/img/scrollup.png">
-<meta property="og:updated_time" content="2016-11-16T01:41:07.246Z">
+<meta property="og:updated_time" content="2016-11-16T01:46:20.100Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hello">
 <meta name="twitter:description" content="今天在github上浏览hexo的主题时，被大神Litten的Yilia主题吸引了，毫不犹豫的换上了这套主题，吸取其他主题的优点，对它进行一些更好的小改造，今天就从添加返回顶部按钮开始吧。  其实，在hexo中实现这个功能不复杂，结合网上的教程，对相应的模块进行修改就可以了。现给出自己修改的过程。">
@@ -169,9 +169,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天在github上浏览hexo的主题时，被大神Litten的Yilia主题吸引了，毫不犹豫的换上了这套主题，吸取其他主题的优点，对它进行一些更好的小改造，今天就从添加返回顶部按钮开始吧。<br>  其实，在hexo中实现这个功能不复杂，结合网上的教程，对相应的模块进行修改就可以了。现给出自己修改的过程。<br><a id="more"></a><br>添加html代码。<br>  打开文件夹/themes/Yilia/layout/_partial在此文件夹下，新建文件totop.ejs，并向其中加入如下代码：</p>
-<p><div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;"><br><a title="返回顶部"><img src="/img/scrollup.png"></a><br></div><br>注意：文件的编码格式为utf-8。<br>添加js代码。<br>  打开文件夹/themes/Yilia/source/js，新建文件totop.js，将如下代码复制其中：</p>
-<p>(function($) {<br>    // When to show the scroll link<br>    // higher number = scroll link appears further down the page<br>    var upperLimit = 1000;</p>
+        <p>今天在github上浏览hexo的主题时，被大神Litten的Yilia主题吸引了，毫不犹豫的换上了这套主题，吸取其他主题的优点，对它进行一些更好的小改造，今天就从添加返回顶部按钮开始吧。<br>  其实，在hexo中实现这个功能不复杂，结合网上的教程，对相应的模块进行修改就可以了。现给出自己修改的过程。<br><a id="more"></a><br> 今天在github上浏览hexo的主题时，被大神Litten的Yilia主题吸引了，毫不犹豫的换上了这套主题，吸取其他主题的优点，对它进行一些更好的小改造，今天就从添加返回顶部按钮开始吧。<br>  其实，在hexo中实现这个功能不复杂，结合网上的教程，对相应的模块进行修改就可以了。现给出自己修改的过程。<br>添加html代码。<br>  打开文件夹/themes/Yilia/layout/_partial在此文件夹下，新建文件totop.ejs，并向其中加入如下代码：<br>1<br>2<br>3</p>
+<p><div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;"><br><a title="返回顶部"><img src="/img/scrollup.png"></a><br></div><br>注意：文件的编码格式为utf-8。<br>添加js代码。<br>  打开文件夹/themes/Yilia/source/js，新建文件totop.js，将如下代码复制其中：<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12<br>13<br>14<br>15<br>16<br>17<br>18<br>19<br>20<br>21<br>22<br>23<br>24<br>25<br>26<br>27<br>(function($) {<br>    // When to show the scroll link<br>    // higher number = scroll link appears further down the page<br>    var upperLimit = 1000;</p>
 <pre><code>// Our scroll link element
 var scrollElem = $(&apos;#totop&apos;);
 
@@ -194,7 +193,7 @@ $(scrollElem).click(function(){
     $(&apos;html, body&apos;).animate({scrollTop:0}, scrollSpeed); return false;
 });
 </code></pre><p>})(jQuery);<br>可以对upperLimit和scrollSpeed参数进行修改，控制显示位置和回滚速度。<br>添加文件引用。<br>  打开文件/themes/Yilia/layout/_partial/after_footer.ejs，在文件的末尾添加以下两行代码：<br>1<br>2<br>&lt;%- partial(‘totop’) %&gt;</p>
-<p><script src="<%- config.root %>js/totop.js"></script><br>添加按钮图片<br>  将下面的图片复制到/themes/Yilia/source/img目录下，文件名为scrollup.png，页面足够长时，就看到按钮出现了。<br>    <br>大功告成，快去试试吧！<br>&lt; Hexo，Yilia主题添加站内搜索功能<br>Litten225<br>很不错，支持一下  [馋嘴]<br>2015年4月8日回复顶转发<br>页话<br>页话<br>回复 Litten225: 很喜欢您的主题，所以就拿过来借用啦 [可爱]<br>2015年5月7日回复顶转发<br>Restia丶Ashdoll<br>Restia丶Ashdoll<br>请教一下多说评论这个样式 如何弄的<br>2015年5月9日回复顶转发<br>Restia丶Ashdoll<br>Restia丶Ashdoll<br><a href="http://www.vsay.cn/one-more-custom-css-lets-you-say-comments-city.html" target="_blank" rel="external">http://www.vsay.cn/one-more-custom-css-lets-you-say-comments-city.html</a> 找到了<br>2015年5月9日回复顶转发<br>页话<br>页话<br>回复 Restia丶Ashdoll: 找到就好，我是从这里找的<a href="http://www.mmuuii360.com/duoshuo-css.html，直接搜索多说样式，有很多样式可以选择哈~" target="_blank" rel="external">http://www.mmuuii360.com/duoshuo-css.html，直接搜索多说样式，有很多样式可以选择哈~</a><br>2015年5月11日回复顶转发<br>NyKO<br>NyKO<br>你的这个主题没找到。-。-<br>2015年7月7日回复顶转发<br>页话<br>页话<br>回复 NyKO: 页面最下面的左下角，点击YiLia就可以进去啦<br>2015年7月8日回复顶转发<br>哆爱度泪<br>哆爱度泪<br>博主，你的文章目录是如何做到的？<br>2015年7月27日回复顶转发<br>哆爱度泪<br>哆爱度泪<br>回复 哆爱度泪: 还有博主你的域名解析是哪家的？dnspod国外无法解析，致使我的域名swiftype无法收录<br>2015年7月27日回复顶转发<br>页话<br>页话<br>回复 哆爱度泪: 我这个域名是从万网上买的，也是在那解析的<br>2015年7月29日回复顶转发<br>李乘波<br>李乘波<br>博主，你没有发现你左边头像的图片懒加载没了吗？我改的时候也把这个改没了，就改回去了。感觉这个功能没了的话这个主题平淡了很多。<br>2015年8月20日回复顶转发<br>lalfie<br>lalfie<br>博主，你的评论里，头像转动是怎么设置的<br>2015年9月1日回复顶转发Litten225<br>很不错，支持一下  [馋嘴]<br>2015年4月8日回复顶转发<br>页话<br>页话<br>回复 Litten225: 很喜欢您的主题，所以就拿过来借用啦 [可爱]<br>2015年5月7日回复顶转发<br>Restia丶Ashdoll<br>Restia丶Ashdoll<br>请教一下多说评论这个样式 如何弄的<br>2015年5月9日回复顶转发<br>Restia丶Ashdoll<br>Restia丶Ashdoll<br><a href="http://www.vsay.cn/one-more-custom-css-lets-you-say-comments-city.html" target="_blank" rel="external">http://www.vsay.cn/one-more-custom-css-lets-you-say-comments-city.html</a> 找到了<br>2015年5月9日回复顶转发<br>页话<br>页话<br>回复 Restia丶Ashdoll: 找到就好，我是从这里找的<a href="http://www.mmuuii360.com/duoshuo-css.html，直接搜索多说样式，有很多样式可以选择哈~" target="_blank" rel="external">http://www.mmuuii360.com/duoshuo-css.html，直接搜索多说样式，有很多样式可以选择哈~</a><br>2015年5月11日回复顶转发<br>NyKO<br>NyKO<br>你的这个主题没找到。-。-<br>2015年7月7日回复顶转发<br>页话<br>页话<br>回复 NyKO: 页面最下面的左下角，点击YiLia就可以进去啦<br>2015年7月8日回复顶转发<br>哆爱度泪<br>哆爱度泪<br>博主，你的文章目录是如何做到的？<br>2015年7月27日回复顶转发<br>哆爱度泪<br>哆爱度泪<br>回复 哆爱度泪: 还有博主你的域名解析是哪家的？dnspod国外无法解析，致使我的域名swiftype无法收录<br>2015年7月27日回复顶转发<br>页话<br>页话<br>回复 哆爱度泪: 我这个域名是从万网上买的，也是在那解析的<br>2015年7月29日回复顶转发<br>李乘波<br>李乘波<br>博主，你没有发现你左边头像的图片懒加载没了吗？我改的时候也把这个改没了，就改回去了。感觉这个功能没了的话这个主题平淡了很多。<br>2015年8月20日回复顶转发<br>lalfie<br>lalfie<br>博主，你的评论里，头像转动是怎么设置的<br>2015年9月1日回复顶转发</p>
+<p><script src="<%- config.root %>js/totop.js"></script><br>添加按钮图片<br>  将下面的图片复制到/themes/Yilia/source/img目录下，文件名为scrollup.png，页面足够长时，就看到按钮出现了。<br>    <br>大功告成，快去试试吧！</p>
 
       
     </div>
@@ -264,12 +263,6 @@ $(scrollElem).click(function(){
 
 <script src="/./main.js"></script>
 
-
-<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
-<a title="返回顶部"><img src="http://n.sinaimg.cn/auto/9e1f1cd7/20161115/scrollup.png"/></a>
-</div>
-
-<script src="/js/totop.js"></script>
 
     
 <div class="tools-col">
